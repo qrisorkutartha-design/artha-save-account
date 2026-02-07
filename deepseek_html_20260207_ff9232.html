@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARTHA SAVE ACCOUNT ROBLOX</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary-black: #0a0a0f;
+            --secondary-black: #121218;
+            --primary-blue: #0066cc;
+            --secondary-blue: #0099ff;
+            --accent-blue: #00ccff;
+            --primary-white: #ffffff;
+            --secondary-white: #f0f0f0;
+            --gray: #888;
+        }
+        
+        body {
+            background-color: var(--primary-black);
+            color: var(--primary-white);
+            min-height: 100vh;
+            padding-bottom: 40px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid var(--primary-blue);
+            margin-bottom: 40px;
+            background: linear-gradient(to right, var(--primary-black), var(--secondary-black));
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 5px 15px rgba(0, 102, 204, 0.2);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .logo i {
+            font-size: 2.8rem;
+            color: var(--accent-blue);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(to right, var(--secondary-blue), var(--accent-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+        }
+        
+        .tagline {
+            color: var(--secondary-white);
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        @media (max-width: 900px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .form-section, .accounts-section {
+            background-color: var(--secondary-black);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 102, 204, 0.2);
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--secondary-blue);
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(0, 102, 204, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title i {
+            color: var(--accent-blue);
+        }
+        
+        .input-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--secondary-white);
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 14px;
+            border-radius: 8px;
+            border: 2px solid #333;
+            background-color: var(--primary-black);
+            color: var(--primary-white);
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        input:focus, select:focus {
+            border-color: var(--primary-blue);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.2);
+        }
+        
+        .profile-preview {
+            background-color: var(--primary-black);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 25px;
+            text-align: center;
+            border: 1px solid rgba(0, 102, 204, 0.2);
+        }
+        
+        .profile-preview h3 {
+            margin-bottom: 15px;
+            color: var(--secondary-blue);
+        }
+        
+        .profile-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary-blue), var(--accent-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+        
+        .username-display {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--accent-blue);
+        }
+        
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            padding: 14px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-grow: 1;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue));
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(to right, var(--secondary-blue), var(--accent-blue));
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 102, 204, 0.4);
+        }
+        
+        .btn-success {
+            background: linear-gradient(to right, #00a86b, #00cc88);
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background: linear-gradient(to right, #00cc88, #00ffaa);
+            transform: translateY(-3px);
+        }
+        
+        .btn-warning {
+            background: linear-gradient(to right, #ff9900, #ffcc00);
+            color: white;
+        }
+        
+        .btn-warning:hover {
+            background: linear-gradient(to right, #ffcc00, #ffee00);
+            transform: translateY(-3px);
+        }
+        
+        .btn-danger {
+            background: linear-gradient(to right, #cc0000, #ff3333);
+            color: white;
+        }
+        
+        .btn-danger:hover {
+            background: linear-gradient(to right, #ff3333, #ff6666);
+            transform: translateY(-3px);
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-left: 10px;
+        }
+        
+        .status-ready {
+            background-color: rgba(0, 200, 83, 0.2);
+            color: #00c853;
+            border: 1px solid #00c853;
+        }
+        
+        .status-sold {
+            background-color: rgba(244, 67, 54, 0.2);
+            color: #f44336;
+            border: 1px solid #f44336;
+        }
+        
+        .accounts-list {
+            margin-top: 20px;
+        }
+        
+        .account-item {
+            background-color: var(--primary-black);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 102, 204, 0.2);
+            transition: all 0.3s;
+        }
+        
+        .account-item:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 102, 204, 0.2);
+        }
+        
+        .account-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .account-username {
+            font-size: 1.4rem;
+            color: var(--accent-blue);
+            font-weight: bold;
+        }
+        
+        .account-price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #00cc88;
+        }
+        
+        .account-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .detail-item {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 12px;
+            border-radius: 8px;
+        }
+        
+        .detail-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 5px;
+        }
+        
+        .detail-value {
+            font-size: 1.1rem;
+            color: var(--secondary-white);
+            font-weight: 600;
+        }
+        
+        .account-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .empty-message {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+        
+        .empty-message i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            border-radius: 8px;
+            background-color: var(--secondary-black);
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border-left: 5px solid var(--primary-blue);
+            transform: translateX(150%);
+            transition: transform 0.5s;
+            z-index: 1000;
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background-color: var(--secondary-black);
+            border-radius: 15px;
+            padding: 30px;
+            width: 90%;
+            max-width: 500px;
+            border: 2px solid var(--primary-blue);
+        }
+        
+        .modal-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary-blue);
+        }
+        
+        .modal-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-user-shield"></i>
+                <h1>ARTHA SAVE ACCOUNT ROBLOX</h1>
+            </div>
+            <p class="tagline">Simpan dan kelola akun Roblox dengan aman dan mudah</p>
+        </header>
+        
+        <main class="content">
+            <section class="form-section">
+                <h2 class="section-title"><i class="fas fa-plus-circle"></i> Tambah Akun Baru</h2>
+                
+                <div class="input-group">
+                    <label for="username"><i class="fas fa-user"></i> Username Roblox</label>
+                    <input type="text" id="username" placeholder="Masukkan username Roblox">
+                </div>
+                
+                <div class="input-group">
+                    <label for="password"><i class="fas fa-key"></i> Password</label>
+                    <input type="password" id="password" placeholder="Masukkan password">
+                </div>
+                
+                <div class="input-group">
+                    <label for="price"><i class="fas fa-tag"></i> Harga (dalam Rupiah)</label>
+                    <input type="number" id="price" placeholder="Masukkan harga akun">
+                </div>
+                
+                <div class="input-group">
+                    <label for="status"><i class="fas fa-circle"></i> Status Akun</label>
+                    <select id="status">
+                        <option value="ready">Ready (Tersedia)</option>
+                        <option value="sold">Sold (Terjual)</option>
+                    </select>
+                </div>
+                
+                <div class="profile-preview">
+                    <h3><i class="fas fa-eye"></i> Preview Profil</h3>
+                    <div class="profile-info">
+                        <div class="avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <p class="username-display" id="preview-username">Username akan muncul di sini</p>
+                            <p id="preview-status"></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="btn-group">
+                    <button class="btn btn-primary" id="save-btn">
+                        <i class="fas fa-save"></i> Simpan Akun
+                    </button>
+                    <button class="btn btn-success" id="clear-btn">
+                        <i class="fas fa-broom"></i> Bersihkan Form
+                    </button>
+                </div>
+            </section>
+            
+            <section class="accounts-section">
+                <h2 class="section-title"><i class="fas fa-list"></i> Daftar Akun Tersimpan</h2>
+                
+                <div class="accounts-list" id="accounts-list">
+                    <!-- Daftar akun akan muncul di sini -->
+                    <div class="empty-message">
+                        <i class="fas fa-user-slash"></i>
+                        <p>Belum ada akun yang disimpan. Tambahkan akun baru menggunakan form di samping.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 ARTHA SAVE ACCOUNT ROBLOX. Semua hak dilindungi.</p>
+            <p>Website ini tidak terafiliasi dengan Roblox Corporation.</p>
+        </footer>
+    </div>
+    
+    <!-- Modal untuk konfirmasi hapus -->
+    <div class="modal" id="delete-modal">
+        <div class="modal-content">
+            <h3 class="modal-title"><i class="fas fa-exclamation-triangle"></i> Konfirmasi Hapus</h3>
+            <p>Apakah Anda yakin ingin menghapus akun ini? Tindakan ini tidak dapat dibatalkan.</p>
+            <div class="modal-actions">
+                <button class="btn btn-danger" id="confirm-delete">Hapus</button>
+                <button class="btn btn-primary" id="cancel-delete">Batal</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <span id="notification-message">Pesan notifikasi</span>
+    </div>
+
+    <script>
+        // Data akun yang disimpan
+        let savedAccounts = [];
+        let accountToDelete = null;
+        
+        // Elemen DOM
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const priceInput = document.getElementById('price');
+        const statusSelect = document.getElementById('status');
+        const saveButton = document.getElementById('save-btn');
+        const clearButton = document.getElementById('clear-btn');
+        const accountsList = document.getElementById('accounts-list');
+        const previewUsername = document.getElementById('preview-username');
+        const previewStatus = document.getElementById('preview-status');
+        const deleteModal = document.getElementById('delete-modal');
+        const confirmDeleteButton = document.getElementById('confirm-delete');
+        const cancelDeleteButton = document.getElementById('cancel-delete');
+        const notification = document.getElementById('notification');
+        const notificationMessage = document.getElementById('notification-message');
+        
+        // Load data dari localStorage saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', function() {
+            loadAccountsFromStorage();
+            updateAccountsList();
+            
+            // Set tanggal simpan default
+            document.getElementById('save-date').textContent = getCurrentDate();
+        });
+        
+        // Update preview username saat diketik
+        usernameInput.addEventListener('input', function() {
+            if (usernameInput.value.trim() !== '') {
+                previewUsername.textContent = usernameInput.value;
+                previewStatus.textContent = "Profil akan ditampilkan di sini";
+            } else {
+                previewUsername.textContent = "Username akan muncul di sini";
+                previewStatus.textContent = "";
+            }
+        });
+        
+        // Update preview status saat dipilih
+        statusSelect.addEventListener('change', function() {
+            updateStatusPreview();
+        });
+        
+        // Fungsi update preview status
+        function updateStatusPreview() {
+            const status = statusSelect.value;
+            if (status === 'ready') {
+                previewStatus.innerHTML = '<span class="status-badge status-ready">READY</span>';
+            } else {
+                previewStatus.innerHTML = '<span class="status-badge status-sold">SOLD</span>';
+            }
+        }
+        
+        // Simpan akun baru
+        saveButton.addEventListener('click', function() {
+            const username = usernameInput.value.trim();
+            const password = passwordInput.value.trim();
+            const price = priceInput.value.trim();
+            const status = statusSelect.value;
+            
+            if (!username || !password || !price) {
+                showNotification('Harap isi semua field!', 'error');
+                return;
+            }
+            
+            if (isNaN(price) || parseInt(price) <= 0) {
+                showNotification('Harga harus berupa angka positif!', 'error');
+                return;
+            }
+            
+            // Buat objek akun baru
+            const newAccount = {
+                id: Date.now(), // ID unik berdasarkan timestamp
+                username: username,
+                password: password,
+                price: formatPrice(parseInt(price)),
+                status: status,
+                saveDate: getCurrentDate(),
+                lastUpdated: getCurrentDateTime()
+            };
+            
+            // Tambahkan ke array
+            savedAccounts.push(newAccount);
+            
+            // Simpan ke localStorage
+            saveAccountsToStorage();
+            
+            // Update daftar akun
+            updateAccountsList();
+            
+            // Reset form
+            clearForm();
+            
+            // Tampilkan notifikasi
+            showNotification(`Akun ${username} berhasil disimpan!`, 'success');
+        });
+        
+        // Bersihkan form
+        clearButton.addEventListener('click', clearForm);
+        
+        // Fungsi bersihkan form
+        function clearForm() {
+            usernameInput.value = '';
+            passwordInput.value = '';
+            priceInput.value = '';
+            statusSelect.value = 'ready';
+            previewUsername.textContent = 'Username akan muncul di sini';
+            previewStatus.textContent = '';
+            usernameInput.focus();
+        }
+        
+        // Update daftar akun yang ditampilkan
+        function updateAccountsList() {
+            if (savedAccounts.length === 0) {
+                accountsList.innerHTML = `
+                    <div class="empty-message">
+                        <i class="fas fa-user-slash"></i>
+                        <p>Belum ada akun yang disimpan. Tambahkan akun baru menggunakan form di samping.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Urutkan berdasarkan yang terbaru ditambahkan
+            const sortedAccounts = [...savedAccounts].reverse();
+            
+            // Generate HTML untuk setiap akun
+            accountsList.innerHTML = sortedAccounts.map(account => `
+                <div class="account-item" data-id="${account.id}">
+                    <div class="account-header">
+                        <div class="account-username">${account.username}</div>
+                        <div class="account-price">${account.price}</div>
+                    </div>
+                    
+                    <div class="account-details">
+                        <div class="detail-item">
+                            <div class="detail-label">Password</div>
+                            <div class="detail-value">${'*'.repeat(account.password.length)}</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Status</div>
+                            <div class="detail-value">
+                                ${account.status === 'ready' 
+                                    ? '<span class="status-badge status-ready">READY</span>' 
+                                    : '<span class="status-badge status-sold">SOLD</span>'}
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Tanggal Simpan</div>
+                            <div class="detail-value">${account.saveDate}</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Terakhir Diperbarui</div>
+                            <div class="detail-value">${account.lastUpdated}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="account-actions">
+                        <button class="btn btn-warning btn-edit" data-id="${account.id}">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="btn btn-danger btn-delete" data-id="${account.id}">
+                            <i class="fas fa-trash"></i> Hapus
+                        </button>
+                        <button class="btn btn-success btn-copy" data-id="${account.id}">
+                            <i class="fas fa-copy"></i> Salin Data
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+            
+            // Tambahkan event listener untuk tombol hapus
+            document.querySelectorAll('.btn-delete').forEach(button => {
+                button.addEventListener('click', function() {
+                    const accountId = parseInt(this.getAttribute('data-id'));
+                    openDeleteModal(accountId);
+                });
+            });
+            
+            // Tambahkan event listener untuk tombol edit
+            document.querySelectorAll('.btn-edit').forEach(button => {
+                button.addEventListener('click', function() {
+                    const accountId = parseInt(this.getAttribute('data-id'));
+                    editAccount(accountId);
+                });
+            });
+            
+            // Tambahkan event listener untuk tombol salin data
+            document.querySelectorAll('.btn-copy').forEach(button => {
+                button.addEventListener('click', function() {
+                    const accountId = parseInt(this.getAttribute('data-id'));
+                    copyAccountData(accountId);
+                });
+            });
+        }
+        
+        // Edit akun
+        function editAccount(accountId) {
+            const account = savedAccounts.find(acc => acc.id === accountId);
+            if (!account) return;
+            
+            // Isi form dengan data akun
+            usernameInput.value = account.username;
+            passwordInput.value = account.password;
+            priceInput.value = account.price.replace(/[^\d]/g, '');
+            statusSelect.value = account.status;
+            
+            // Update preview
+            previewUsername.textContent = account.username;
+            updateStatusPreview();
+            
+            // Hapus akun dari daftar
+            savedAccounts = savedAccounts.filter(acc => acc.id !== accountId);
+            saveAccountsToStorage();
+            updateAccountsList();
+            
+            // Tampilkan notifikasi
+            showNotification(`Akun ${account.username} siap diedit!`, 'info');
+        }
+        
+        // Salin data akun ke clipboard
+        function copyAccountData(accountId) {
+            const account = savedAccounts.find(acc => acc.id === accountId);
+            if (!account) return;
+            
+            const accountData = `Username: ${account.username}\nPassword: ${account.password}\nHarga: ${account.price}\nStatus: ${account.status === 'ready' ? 'READY' : 'SOLD'}\nTanggal Simpan: ${account.saveDate}`;
+            
+            navigator.clipboard.writeText(accountData)
+                .then(() => {
+                    showNotification(`Data akun ${account.username} berhasil disalin!`, 'success');
+                })
+                .catch(err => {
+                    console.error('Gagal menyalin data: ', err);
+                    showNotification('Gagal menyalin data!', 'error');
+                });
+        }
+        
+        // Buka modal konfirmasi hapus
+        function openDeleteModal(accountId) {
+            accountToDelete = accountId;
+            deleteModal.style.display = 'flex';
+        }
+        
+        // Tutup modal konfirmasi hapus
+        cancelDeleteButton.addEventListener('click', function() {
+            deleteModal.style.display = 'none';
+            accountToDelete = null;
+        });
+        
+        // Konfirmasi hapus akun
+        confirmDeleteButton.addEventListener('click', function() {
+            if (accountToDelete) {
+                const account = savedAccounts.find(acc => acc.id === accountToDelete);
+                savedAccounts = savedAccounts.filter(acc => acc.id !== accountToDelete);
+                saveAccountsToStorage();
+                updateAccountsList();
+                deleteModal.style.display = 'none';
+                showNotification(`Akun ${account.username} berhasil dihapus!`, 'success');
+                accountToDelete = null;
+            }
+        });
+        
+        // Format harga ke format Rupiah
+        function formatPrice(price) {
+            return 'Rp ' + price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        }
+        
+        // Dapatkan tanggal saat ini
+        function getCurrentDate() {
+            const now = new Date();
+            const day = String(now.getDate()).padStart(2, '0');
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const year = now.getFullYear();
+            return `${day}/${month}/${year}`;
+        }
+        
+        // Dapatkan tanggal dan waktu saat ini
+        function getCurrentDateTime() {
+            const now = new Date();
+            const day = String(now.getDate()).padStart(2, '0');
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const year = now.getFullYear();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            return `${day}/${month}/${year} ${hours}:${minutes}`;
+        }
+        
+        // Tampilkan notifikasi
+        function showNotification(message, type) {
+            notificationMessage.textContent = message;
+            
+            // Set warna notifikasi berdasarkan jenis
+            if (type === 'success') {
+                notification.style.borderLeftColor = '#00c853';
+            } else if (type === 'error') {
+                notification.style.borderLeftColor = '#f44336';
+            } else {
+                notification.style.borderLeftColor = '#0066cc';
+            }
+            
+            notification.classList.add('show');
+            
+            // Sembunyikan notifikasi setelah 3 detik
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+        
+        // Simpan data ke localStorage
+        function saveAccountsToStorage() {
+            localStorage.setItem('arthaRobloxAccounts', JSON.stringify(savedAccounts));
+        }
+        
+        // Load data dari localStorage
+        function loadAccountsFromStorage() {
+            const storedAccounts = localStorage.getItem('arthaRobloxAccounts');
+            if (storedAccounts) {
+                savedAccounts = JSON.parse(storedAccounts);
+            }
+        }
+        
+        // Update status preview saat halaman dimuat
+        updateStatusPreview();
+    </script>
+</body>
+</html>
